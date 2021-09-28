@@ -1,14 +1,14 @@
 const multiplicationTable = (maxValue) => {
-  let arr = [];
+  let table = [];
   let row = "";
   for (let j = 1; j < maxValue + 1; j++) {
     for (let i = 1; i < maxValue + 1; i++) {
       row += `${i * j} `;
     }
-    arr.push(row);
+    table.push(row);
     row = "";
   }
-  return arr;
+  return table;
 };
 
 console.log(multiplicationTable(1));
