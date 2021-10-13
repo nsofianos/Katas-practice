@@ -1,10 +1,18 @@
 const camelCase = function (input) {
-  for (let i = 0; i < input.length; i++) {
-    if (input.charAt(i) === " ") {
-      input.replace(input.charAt(i + 1), input.charAt(i + 1).toUpperCase());
-    }
+  //split words into an array
+  let splitWords = input.split(" ");
+  let updatedWords = [];
+  //create new array with capitalized words (except for first, as this is camel case)
+  for (let word of splitWords) {
+    if (splitWords.indexOf(word) === 0) {
+      updatedWords.push(word);
+    } else
+      updatedWords.push(
+        word.replace(word.charAt(0), word.charAt(0).toUpperCase())
+      );
   }
-  console.log(input);
+  //join words into a string
+  return updatedWords.join("");
 };
 
 // expected output:
@@ -12,5 +20,5 @@ const camelCase = function (input) {
 // loopyLighthouse
 // supercalifragalisticexpialidocious
 console.log(camelCase("this is a string"));
-// console.log(camelCase("loopy lighthouse"));
-// console.log(camelCase("supercalifragalisticexpialidocious"));
+console.log(camelCase("loopy lighthouse"));
+console.log(camelCase("supercalifragalisticexpialidocious"));
