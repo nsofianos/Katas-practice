@@ -13,6 +13,9 @@ const findSingleCharacter = (char, string) => {
 // find a string
 //      that matches exactly
 
+const findExactMatch = (string, match) => {
+  return string.length === match.length && string.includes(match);
+};
 // search for an empty string, is always true
 //      in an empty string
 //      in abc
@@ -40,3 +43,6 @@ const findSingleCharacter = (char, string) => {
 // console.log(findSingleCharacter("a", "amazing")); //expected true
 // console.log(findSingleCharacter("a", "terrible")); //expected false
 // console.log(findSingleCharacter("%", "&%$#")); //expected true
+console.log(findExactMatch("abc", "ab")); //expected false
+console.log(findExactMatch("abc123", "123abc")); //expected false
+console.log(findExactMatch("t a b l e", "t a b l e")); //expected true
