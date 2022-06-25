@@ -19,7 +19,9 @@ const findExactMatch = (string, match) => {
 // search for an empty string, is always true
 //      in an empty string
 //      in abc
-
+const findEmptyString = (string) => {
+  return string.includes("");
+};
 // special/corner cases
 //      search for undefined in a string fails
 //      searches are case-sensitive
@@ -43,6 +45,8 @@ const findExactMatch = (string, match) => {
 // console.log(findSingleCharacter("a", "amazing")); //expected true
 // console.log(findSingleCharacter("a", "terrible")); //expected false
 // console.log(findSingleCharacter("%", "&%$#")); //expected true
-console.log(findExactMatch("abc", "ab")); //expected false
-console.log(findExactMatch("abc123", "123abc")); //expected false
-console.log(findExactMatch("t a b l e", "t a b l e")); //expected true
+// console.log(findExactMatch("abc", "ab")); //expected false
+// console.log(findExactMatch("abc123", "123abc")); //expected false
+// console.log(findExactMatch("t a b l e", "t a b l e")); //expected true
+console.log(findEmptyString("")); //expected false
+console.log(findEmptyString("abc")); //expected true
