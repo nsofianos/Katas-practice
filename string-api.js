@@ -5,27 +5,31 @@
 // finding a single character
 //      can be done (a character is also a string, in JS)
 //      reports false if character was not found
-
 const findSingleCharacter = (char, string) => {
   return string.includes(char);
 };
 
 // find a string
 //      that matches exactly
-
 const findExactMatch = (string, match) => {
   return string.length === match.length && string.includes(match);
 };
+
 // search for an empty string, is always true
 //      in an empty string
 //      in abc
 const findEmptyString = (string) => {
   return string.includes("");
 };
+
 // special/corner cases
 //      search for undefined in a string fails
 //      searches are case-sensitive
 //      must NOT be a regular expression
+const findEdgeCases = (string, match) => {
+  if (match === undefined) return "error: undefined";
+  return string.includes(match);
+};
 
 // coerces the searched "thing" into a string
 //      e.g. from a number
@@ -48,5 +52,6 @@ const findEmptyString = (string) => {
 // console.log(findExactMatch("abc", "ab")); //expected false
 // console.log(findExactMatch("abc123", "123abc")); //expected false
 // console.log(findExactMatch("t a b l e", "t a b l e")); //expected true
-console.log(findEmptyString("")); //expected false
-console.log(findEmptyString("abc")); //expected true
+// console.log(findEmptyString("")); //expected false
+// console.log(findEmptyString("abc")); //expected true
+console.log(findEdgeCases("string", "string")); //expected
