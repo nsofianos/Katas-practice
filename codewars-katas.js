@@ -17,12 +17,10 @@ const splitOddAndEven = (numbers) => {
 
 // 2.
 // Write a function countAmountOfEachCharacter, that accepts one parameter: inputString, a valid string.
-
 // The function should return an object. The object has a key for every character that exists at least once in the string.
 // The value for each key is how many times that character exists in the string.
 
 // Input: a string.
-
 // Output: an object with keys for the existing characters and values for how many times that character exists in the string.
 
 const countAmountOfEachCharacter = (inputString) => {
@@ -33,9 +31,22 @@ const countAmountOfEachCharacter = (inputString) => {
   return result;
 };
 
+//3.
+// Write a function removeExclamationMarksFromEnd, that accepts one parameter: inputString, a valid string.
+// The function should return a string. The string contains the inputString, but without an exclamation mark at the end.
+
+// Input: a string.
+// Output: a string that has no exclamation mark at the end.
+
+function removeExclamationMarksFromEnd(inputString) {
+  return [...inputString].filter((value) => value !== "!").join("");
+}
+
 // ALL TESTS
 
 // console.log(splitOddAndEven([1, 2, 3])); // expected result: {odd: [1,3], even: [2]}
 // console.log(splitOddAndEven([2, 4, 6])); // expected result: {odd: [], even: [2, 4, 6]}
-console.log(countAmountOfEachCharacter("hello")); // expected result: {h: 1, e: 1, l: 2, o: 1}
-console.log(countAmountOfEachCharacter("My Name Is Nancy")); // expected result: { M: 1, y: 2, N: 2, a: 2, m: 1, e: 1, I: 1, s: 1, n: 1, c: 1 }
+// console.log(countAmountOfEachCharacter("hello")); // expected result: {h: 1, e: 1, l: 2, o: 1}
+// console.log(countAmountOfEachCharacter("My Name Is Nancy")); // expected result: { M: 1, y: 2, N: 2, a: 2, m: 1, e: 1, I: 1, s: 1, n: 1, c: 1 }
+console.log(removeExclamationMarksFromEnd("string!"));
+console.log(removeExclamationMarksFromEnd("string!!!"));
