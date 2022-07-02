@@ -52,9 +52,27 @@ const firstNames = characters.map((character) => character.name.split(" ")[0]);
 
 //***REDUCE***
 //1. Get total mass of all characters
+const totalMass = characters.reduce((acc, cur) => (acc += cur.mass), 0);
+
 //2. Get total height of all characters
+const totalHeight = characters.reduce((acc, cur) => (acc += cur.height), 0);
+
 //3. Get total number of characters by eye color
+const totalEyeColor = characters.reduce((acc, cur) => {
+  acc[cur.eye_color] = (acc[cur.eye_color] || 0) + 1;
+  return acc;
+}, {});
+
 //4. Get total number of characters in all the character names
+const totalCharactersInNames = characters.reduce(
+  (acc, cur) => (acc += cur.name.length),
+  0
+);
+
+// console.log(totalMass);
+// console.log(totalHeight);
+// console.log(totalEyeColor);
+// console.log(totalCharactersInNames);
 
 //***FILTER***
 //1. Get characters with mass greater than 100
