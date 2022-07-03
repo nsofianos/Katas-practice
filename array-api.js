@@ -117,14 +117,26 @@ const sortedByGender = characters.sort((a, b) => {
 
 // console.log(sortedByMass);
 // console.log(sortedByHeight);
-console.log(sortedByName);
-console.log(sortedByGender);
+// console.log(sortedByName);
+// console.log(sortedByGender);
 
 //***EVERY***
 //1. Does every character have blue eyes?
+const allBlue = characters.every((character) => character.eye_color === "blue");
+
 //2. Does every character have mass more than 40?
+const allHeavy = characters.every((character) => character.mass > 40);
+
 //3. Is every character shorter than 200?
+const allShort = characters.every((character) => character.height < 200);
+
 //4. Is every character male?
+const allMale = characters.every((character) => character.gender === "male");
+
+// console.log(allBlue);
+// console.log(allHeavy);
+// console.log(allShort);
+// console.log(allMale);
 
 //***SOME***
 //1. Is there at least one male character?
