@@ -98,9 +98,27 @@ const femaleCharacters = characters.filter(
 
 //***SORT***
 //1. Sort by mass
+const sortedByMass = characters.sort((a, b) => a.mass - b.mass);
+
 //2. Sort by height
+const sortedByHeight = characters.sort((a, b) => a.height - b.height);
+
 //3. Sort by name
+const sortedByName = characters.sort((a, b) => {
+  if (a.name < b.name) return -1;
+  return 1;
+});
+
 //4. Sort by gender
+const sortedByGender = characters.sort((a, b) => {
+  if (a.gender === "male") return -1;
+  return 1;
+});
+
+// console.log(sortedByMass);
+// console.log(sortedByHeight);
+console.log(sortedByName);
+console.log(sortedByGender);
 
 //***EVERY***
 //1. Does every character have blue eyes?
