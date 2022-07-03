@@ -76,9 +76,25 @@ const totalCharactersInNames = characters.reduce(
 
 //***FILTER***
 //1. Get characters with mass greater than 100
+const heavyCharacters = characters.filter((character) => character.mass > 100);
+
 //2. Get characters with height less than 200
+const tallCharacters = characters.filter((character) => character.height < 200);
+
 //3. Get all male characters
+const maleCharacters = characters.filter(
+  (character) => character.gender === "male"
+);
+
 //4. Get all female characters
+const femaleCharacters = characters.filter(
+  (character) => character.gender === "female"
+);
+
+// console.log(heavyCharacters);
+// console.log(tallCharacters);
+// console.log(maleCharacters);
+// console.log(femaleCharacters);
 
 //***SORT***
 //1. Sort by mass
